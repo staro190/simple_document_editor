@@ -52,3 +52,27 @@ body {
   background: rgba(200, 200, 255, 0.4);
   pointer-events: none;
 }
+
+/* ... 기존 표 스타일링 코드 아래에 추가하세요 ... */
+
+/* 1. 크기 조절 손잡이 (Resize Handle) 스타일 */
+.ProseMirror .column-resize-handle {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  bottom: -2px;
+  width: 4px; /* 마우스가 인식하는 너비 */
+  background-color: transparent; /* 평소에는 투명 */
+  cursor: col-resize; /* ★ 핵심: 마우스 커서가 좌우 화살표로 변함 */
+  z-index: 20;
+}
+
+/* 2. 손잡이에 마우스를 올렸을 때 시각적 힌트 (선택사항) */
+.ProseMirror .column-resize-handle:hover {
+  background-color: #3b82f6; /* 파란색 가이드라인 표시 */
+}
+
+/* 3. 드래그 중일 때 전역 커서 고정 */
+.resize-cursor {
+  cursor: col-resize;
+}
